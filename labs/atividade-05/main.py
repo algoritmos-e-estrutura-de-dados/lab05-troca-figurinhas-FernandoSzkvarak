@@ -1,16 +1,35 @@
-from lista import Lista
+def maximizar_troca_de_figurinhas(figurinhas_da_maria, figurinhas_do_joao):
+  
+    controle = 0
+    quantidade = 0
 
-lista = Lista()
+    if len(figurinhas_da_maria) < len(figurinhas_do_joao):  
+        for i in range(len(figurinhas_da_maria)):
+            for j in range(len(figurinhas_do_joao)):
+                if figurinhas_da_maria[i] == figurinhas_do_joao[j]:
+                    controle += 1
+        quantidade = len(figurinhas_da_maria) - controle
 
-lista.adicionar(1)
-lista.adicionar(2)
-lista.adicionar(3)
-lista.adicionar(4)
-lista.adicionar(5)
-lista.adicionar(6)
 
-lista.show()
+    elif len(figurinhas_do_joao) < len(figurinhas_da_maria):
+        for i in range(len(figurinhas_do_joao)):
+            for j in range(len(figurinhas_da_maria)):
+                if figurinhas_do_joao[i] == figurinhas_da_maria[j]:
+                    controle += 1
+        quantidade = len(figurinhas_do_joao) - controle
 
-lista.remover_um(3)
+                                                              
+    else:
+        for i in range(len(figurinhas_da_maria)):
+            for j in range(len(figurinhas_do_joao)):
+                if figurinhas_da_maria[i] == figurinhas_do_joao[j]:
+                    controle += 1
+        quantidade = len(figurinhas_da_maria) - controle
 
-lista.show()
+    return quantidade
+
+    if __name__ == '__main__':
+    A, B = input().split(' ')
+    figurinhas_da_maria = input().split(' ')
+    figurinhas_da_joao = input().split(' ')
+    maximizar_troca_de_figurinhas(figurinhas_da_maria, figurinhas_da_joao)
